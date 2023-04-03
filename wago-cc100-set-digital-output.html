@@ -1,0 +1,39 @@
+<!-- Set digital output -->
+<script type="text/javascript">
+    RED.nodes.registerType('wago-cc100-set-digital-output',{
+        category: 'WAGO CC100',
+        color: '#FF0000',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:4,
+        outputs:1,
+        inputLabels: "boolean input",
+        outputLabels: "set state",
+        icon: "arrow-in.svg",
+        label: function() {
+            return this.name||"Set DO";
+        },
+        paletteLabel: "Set DO"
+    });
+</script>
+
+<script type="text/html" data-template-name="wago-cc100-digital-output">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="wago-cc100-digital-output">
+    <p>Writes the Digital Output 1 of the CC100 PLC</p>
+    <p>
+        If the write process exceeds a maximum time of 5 seconds, a corresponding error message follows.
+        This maximum time is currently not adjustable.
+    </p>
+    <p>
+        This is an 24 VDC, 0.5 A output that provides high-side switching. A green status LED on the
+        CC100 indicates the signal status. See the manual for further information.
+    </p>
+</script>
+<!-- Set digital output -->

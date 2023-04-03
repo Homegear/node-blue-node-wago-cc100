@@ -1,0 +1,14 @@
+{
+  "name": "node-blue-node-wago-cc100",
+  "version": "1.0.0",
+  "description": "This package provides nodes to get and set Crestron variables over a serial connection.",
+  "homepage": "https://github.com/Homegear/node-blue-node-wago-cc100",
+  "node-blue": {
+    "maxThreadCounts": {
+      "wago-cc100-set-digital-output": 0
+    },
+    "nodes": {
+      "wago-cc100-set-digital-output": "wago-cc100-set-digital-output.so"
+    }
+  }
+}

@@ -1,0 +1,215 @@
+<!-- Read digital output -->
+<script type="text/javascript">
+    RED.nodes.registerType('wago-cc100-read-digital-output',{
+        category: 'WAGO CC100',
+        color: '#FF0000',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:5,
+        inputLabels: "input",
+        outputLabels: ["DO 1", "DO 2", "DO 3", "DO 4", "object containing all states"],
+        icon: "arrow-in.svg",
+        label: function() {
+            return this.name||"Read DO";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="wago-cc100-read-digital-output">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="wago-cc100-read-digital-output">
+    <p>Reads all Digital Output states of the CC100 PLC</p>
+    <p>
+        The CC100 has 4 digital output channels (24 VDC, 0.5 A). The outputs provide high-side switching.
+        A green status LED for each channel indicates the signal status.
+        See the manual for further information.
+    </p>
+</script>
+<!-- Read digital output -->
+
+<!-- Digital input -->
+<script type="text/javascript">
+    RED.nodes.registerType('wago-cc100-read-digital-input',{
+        category: 'WAGO CC100',
+        color: '#FFFF00',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:9,
+        inputLabels: "input",
+        outputLabels: ["DI 1", "DI 2", "DI 3", "DI 4", "DI 5", "DI 6", "DI 7", "DI 8", "object containing all states"],
+        icon: "feed.svg",
+        label: function() {
+            return this.name||"Read DI";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="wago-cc100-read-digital-input">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="wago-cc100-read-digital-input">
+    <p>Reads all Digital Input states of the CC100 PLC</p>
+    <p>
+        The CC100 has 8 digital input channels (24 VDC, 2.8 mA).
+        A green status LED for each channel indicates the signal status.
+        Each input channel has a noise-rejection RC filter with a 5.0 µs time constant.
+        See the manual for further information.
+    </p>
+</script>
+<!-- Read digital input -->
+
+<!-- Set analog output -->
+<script type="text/javascript">
+    RED.nodes.registerType('wago-cc100-set-analog-output',{
+        category: 'WAGO CC100',
+        color: '#4169E1',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        inputLabels: "numeric input (0 … +10) V",
+        outputLabels: "set state",
+        icon: "arrow-in.svg",
+        label: function() {
+            return this.name||"Set AO";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="wago-cc100-set-analog-output">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="wago-cc100-set-analog-output">
+    <p>Writes Analog Output 1 of the CC100 PLC</p>
+    <p>
+        The CC100 generates signals with standardized values of 0 … +10 V.
+        The output signal is output at a resolution of 12 bits.
+        See the manual for further information.
+    </p>
+</script>
+<!-- Set analog output -->
+
+<!-- Read analog output -->
+<script type="text/javascript">
+    RED.nodes.registerType('wago-cc100-read-analog-output',{
+        category: 'WAGO CC100',
+        color: '#4169E1',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:2,
+        inputLabels: "input",
+        outputLabels: ["AO 1", "AO 2"],
+        icon: "feed.svg",
+        label: function() {
+            return this.name||"Read AO";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="Read-AO">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="Read-AO">
+    <p>Reads all Analog Output values of the CC100 PLC</p>
+    <p>
+        The CC100 has 2 analog output channels (0 … +10 V). The channels have a common ground potential.
+        The output signals are output at a resolution of 12 bits.
+        See the manual for further information.
+    </p>
+</script>
+<!-- Read Analog Out -->
+
+<!-- Read analog input -->
+<script type="text/javascript">
+    RED.nodes.registerType('wago-cc100-read-analog-input',{
+        category: 'WAGO CC100',
+        color: '#00FF00',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        inputLabels: "input",
+        outputLabels: "state AI 1",
+        icon: "feed.svg",
+        label: function() {
+            return this.name||"Read AI";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="wago-cc100-read-analog-input">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="wago-cc100-read-analog-input">
+    <p>Reads Analog Input 1 of the CC100 PLC</p>
+    <p>
+        The CC100 processes signals with standardized values of 0 … +10 V.
+        The input signal is transmitted at a resolution of 12 bits.
+        See the manual for further information.
+    </p>
+</script>
+<!-- Read analog input -->
+
+<!-- Read analog PT -->
+<script type="text/javascript">
+    RED.nodes.registerType('wago-cc100-read-analog-pt',{
+        category: 'WAGO CC100',
+        color: '#00FF00',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        inputLabels: "input",
+        outputLabels: "state PT 1",
+        icon: "feed.svg",
+        label: function() {
+            return this.name||"Read PT";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="wago-cc100-read-analog-pt">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="wago-cc100-read-analog-pt">
+    <p>Reads Pt1000 Input 1 of the CC100 PLC</p>
+    <p>
+        An analog temperature sensor Pt1000 must be connected to the CC100.
+        The resistance value is converted into a temperature value.
+    </p>
+</script>
+<!-- Read analog PT -->
